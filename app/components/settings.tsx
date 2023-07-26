@@ -413,52 +413,52 @@ export function Settings() {
       </div>
       <div className={styles["settings"]}>
         <List>
-          <ListItem title={Locale.Settings.Avatar}>
-            <Popover
-              onClose={() => setShowEmojiPicker(false)}
-              content={
-                <AvatarPicker
-                  onEmojiClick={(avatar: string) => {
-                    updateConfig((config) => (config.avatar = avatar));
-                    setShowEmojiPicker(false);
-                  }}
-                />
-              }
-              open={showEmojiPicker}
-            >
-              <div
-                className={styles.avatar}
-                onClick={() => setShowEmojiPicker(true)}
-              >
-                <Avatar avatar={config.avatar} />
-              </div>
-            </Popover>
-          </ListItem>
+          {/*<ListItem title={Locale.Settings.Avatar}>*/}
+          {/*  <Popover*/}
+          {/*    onClose={() => setShowEmojiPicker(false)}*/}
+          {/*    content={*/}
+          {/*      <AvatarPicker*/}
+          {/*        onEmojiClick={(avatar: string) => {*/}
+          {/*          updateConfig((config) => (config.avatar = avatar));*/}
+          {/*          setShowEmojiPicker(false);*/}
+          {/*        }}*/}
+          {/*      />*/}
+          {/*    }*/}
+          {/*    open={showEmojiPicker}*/}
+          {/*  >*/}
+          {/*    <div*/}
+          {/*      className={styles.avatar}*/}
+          {/*      onClick={() => setShowEmojiPicker(true)}*/}
+          {/*    >*/}
+          {/*      <Avatar avatar={config.avatar} />*/}
+          {/*    </div>*/}
+          {/*  </Popover>*/}
+          {/*</ListItem>*/}
 
-          <ListItem
-            title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
-            subTitle={
-              checkingUpdate
-                ? Locale.Settings.Update.IsChecking
-                : hasNewVersion
-                ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
-                : Locale.Settings.Update.IsLatest
-            }
-          >
-            {checkingUpdate ? (
-              <LoadingIcon />
-            ) : hasNewVersion ? (
-              <Link href={updateUrl} target="_blank" className="link">
-                {Locale.Settings.Update.GoToUpdate}
-              </Link>
-            ) : (
-              <IconButton
-                icon={<ResetIcon></ResetIcon>}
-                text={Locale.Settings.Update.CheckUpdate}
-                onClick={() => checkUpdate(true)}
-              />
-            )}
-          </ListItem>
+          {/*<ListItem*/}
+          {/*  title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}*/}
+          {/*  subTitle={*/}
+          {/*    checkingUpdate*/}
+          {/*      ? Locale.Settings.Update.IsChecking*/}
+          {/*      : hasNewVersion*/}
+          {/*      ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")*/}
+          {/*      : Locale.Settings.Update.IsLatest*/}
+          {/*  }*/}
+          {/*>*/}
+          {/*  {checkingUpdate ? (*/}
+          {/*    <LoadingIcon />*/}
+          {/*  ) : hasNewVersion ? (*/}
+          {/*    <Link href={updateUrl} target="_blank" className="link">*/}
+          {/*      {Locale.Settings.Update.GoToUpdate}*/}
+          {/*    </Link>*/}
+          {/*  ) : (*/}
+          {/*    <IconButton*/}
+          {/*      icon={<ResetIcon></ResetIcon>}*/}
+          {/*      text={Locale.Settings.Update.CheckUpdate}*/}
+          {/*      onClick={() => checkUpdate(true)}*/}
+          {/*    />*/}
+          {/*  )}*/}
+          {/*</ListItem>*/}
 
           <ListItem title={Locale.Settings.SendKey}>
             <Select
@@ -495,20 +495,20 @@ export function Settings() {
             </Select>
           </ListItem>
 
-          <ListItem title={Locale.Settings.Lang.Name}>
-            <Select
-              value={getLang()}
-              onChange={(e) => {
-                changeLang(e.target.value as any);
-              }}
-            >
-              {AllLangs.map((lang) => (
-                <option value={lang} key={lang}>
-                  {ALL_LANG_OPTIONS[lang]}
-                </option>
-              ))}
-            </Select>
-          </ListItem>
+          {/*<ListItem title={Locale.Settings.Lang.Name}>*/}
+          {/*  <Select*/}
+          {/*    value={getLang()}*/}
+          {/*    onChange={(e) => {*/}
+          {/*      changeLang(e.target.value as any);*/}
+          {/*    }}*/}
+          {/*  >*/}
+          {/*    {AllLangs.map((lang) => (*/}
+          {/*      <option value={lang} key={lang}>*/}
+          {/*        {ALL_LANG_OPTIONS[lang]}*/}
+          {/*      </option>*/}
+          {/*    ))}*/}
+          {/*  </Select>*/}
+          {/*</ListItem>*/}
 
           <ListItem
             title={Locale.Settings.FontSize.Title}
@@ -632,91 +632,91 @@ export function Settings() {
             <></>
           )}
 
-          {!accessStore.hideUserApiKey ? (
-            <>
-              <ListItem
-                title={Locale.Settings.Endpoint.Title}
-                subTitle={Locale.Settings.Endpoint.SubTitle}
-              >
-                <input
-                  type="text"
-                  value={accessStore.openaiUrl}
-                  placeholder="https://api.openai.com/"
-                  onChange={(e) =>
-                    accessStore.updateOpenAiUrl(e.currentTarget.value)
-                  }
-                ></input>
-              </ListItem>
-              <ListItem
-                title={Locale.Settings.Token.Title}
-                subTitle={Locale.Settings.Token.SubTitle}
-              >
-                <PasswordInput
-                  value={accessStore.token}
-                  type="text"
-                  placeholder={Locale.Settings.Token.Placeholder}
-                  onChange={(e) => {
-                    accessStore.updateToken(e.currentTarget.value);
-                  }}
-                />
-              </ListItem>
-            </>
-          ) : null}
+          {/*{!accessStore.hideUserApiKey ? (*/}
+          {/*  <>*/}
+          {/*    <ListItem*/}
+          {/*      title={Locale.Settings.Endpoint.Title}*/}
+          {/*      subTitle={Locale.Settings.Endpoint.SubTitle}*/}
+          {/*    >*/}
+          {/*      <input*/}
+          {/*        type="text"*/}
+          {/*        value={accessStore.openaiUrl}*/}
+          {/*        placeholder="https://api.openai.com/"*/}
+          {/*        onChange={(e) =>*/}
+          {/*          accessStore.updateOpenAiUrl(e.currentTarget.value)*/}
+          {/*        }*/}
+          {/*      ></input>*/}
+          {/*    </ListItem>*/}
+          {/*    <ListItem*/}
+          {/*      title={Locale.Settings.Token.Title}*/}
+          {/*      subTitle={Locale.Settings.Token.SubTitle}*/}
+          {/*    >*/}
+          {/*      <PasswordInput*/}
+          {/*        value={accessStore.token}*/}
+          {/*        type="text"*/}
+          {/*        placeholder={Locale.Settings.Token.Placeholder}*/}
+          {/*        onChange={(e) => {*/}
+          {/*          accessStore.updateToken(e.currentTarget.value);*/}
+          {/*        }}*/}
+          {/*      />*/}
+          {/*    </ListItem>*/}
+          {/*  </>*/}
+          {/*) : null}*/}
 
-          {!accessStore.hideBalanceQuery ? (
-            <ListItem
-              title={Locale.Settings.Usage.Title}
-              subTitle={
-                showUsage
-                  ? loadingUsage
-                    ? Locale.Settings.Usage.IsChecking
-                    : Locale.Settings.Usage.SubTitle(
-                        usage?.used ?? "[?]",
-                        usage?.subscription ?? "[?]",
-                      )
-                  : Locale.Settings.Usage.NoAccess
-              }
-            >
-              {!showUsage || loadingUsage ? (
-                <div />
-              ) : (
-                <IconButton
-                  icon={<ResetIcon></ResetIcon>}
-                  text={Locale.Settings.Usage.Check}
-                  onClick={() => checkUsage(true)}
-                />
-              )}
-            </ListItem>
-          ) : null}
+          {/*{!accessStore.hideBalanceQuery ? (*/}
+          {/*  <ListItem*/}
+          {/*    title={Locale.Settings.Usage.Title}*/}
+          {/*    subTitle={*/}
+          {/*      showUsage*/}
+          {/*        ? loadingUsage*/}
+          {/*          ? Locale.Settings.Usage.IsChecking*/}
+          {/*          : Locale.Settings.Usage.SubTitle(*/}
+          {/*              usage?.used ?? "[?]",*/}
+          {/*              usage?.subscription ?? "[?]",*/}
+          {/*            )*/}
+          {/*        : Locale.Settings.Usage.NoAccess*/}
+          {/*    }*/}
+          {/*  >*/}
+          {/*    {!showUsage || loadingUsage ? (*/}
+          {/*      <div />*/}
+          {/*    ) : (*/}
+          {/*      <IconButton*/}
+          {/*        icon={<ResetIcon></ResetIcon>}*/}
+          {/*        text={Locale.Settings.Usage.Check}*/}
+          {/*        onClick={() => checkUsage(true)}*/}
+          {/*      />*/}
+          {/*    )}*/}
+          {/*  </ListItem>*/}
+          {/*) : null}*/}
 
-          <ListItem
-            title={Locale.Settings.CustomModel.Title}
-            subTitle={Locale.Settings.CustomModel.SubTitle}
-          >
-            <input
-              type="text"
-              value={config.customModels}
-              placeholder="model1,model2,model3"
-              onChange={(e) =>
-                config.update(
-                  (config) => (config.customModels = e.currentTarget.value),
-                )
-              }
-            ></input>
-          </ListItem>
+          {/*<ListItem*/}
+          {/*  title={Locale.Settings.CustomModel.Title}*/}
+          {/*  subTitle={Locale.Settings.CustomModel.SubTitle}*/}
+          {/*>*/}
+          {/*  <input*/}
+          {/*    type="text"*/}
+          {/*    value={config.customModels}*/}
+          {/*    placeholder="model1,model2,model3"*/}
+          {/*    onChange={(e) =>*/}
+          {/*      config.update(*/}
+          {/*        (config) => (config.customModels = e.currentTarget.value),*/}
+          {/*      )*/}
+          {/*    }*/}
+          {/*  ></input>*/}
+          {/*</ListItem>*/}
         </List>
 
         <SyncItems />
 
         <List>
-          <ModelConfigList
-            modelConfig={config.modelConfig}
-            updateConfig={(updater) => {
-              const modelConfig = { ...config.modelConfig };
-              updater(modelConfig);
-              config.update((config) => (config.modelConfig = modelConfig));
-            }}
-          />
+          {/*<ModelConfigList*/}
+          {/*  modelConfig={config.modelConfig}*/}
+          {/*  updateConfig={(updater) => {*/}
+          {/*    const modelConfig = { ...config.modelConfig };*/}
+          {/*    updater(modelConfig);*/}
+          {/*    config.update((config) => (config.modelConfig = modelConfig));*/}
+          {/*  }}*/}
+          {/*/>*/}
         </List>
 
         {shouldShowPromptModal && (

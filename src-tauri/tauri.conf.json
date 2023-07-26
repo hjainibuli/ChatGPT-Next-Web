@@ -8,7 +8,7 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "ChatGPT Next Web",
+    "productName": "智绘创客",
     "version": "2.9.1"
   },
   "tauri": {
